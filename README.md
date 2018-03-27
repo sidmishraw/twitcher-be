@@ -67,6 +67,7 @@ go build -o twitcher -i
   * `pgNbr`: The page number of the results to fetch from Twitch. It is a positive integer `>= 1`.
 
 Example API invocation: `http://localhost:8080/getLiveCreators?searchString=dota2&pgNbr=3`
+
 Example response:
 
 ```json
