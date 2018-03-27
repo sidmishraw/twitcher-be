@@ -32,7 +32,7 @@
 // main.go
 // @author Sidharth Mishra Twitcher
 // @created Tue Aug 29 2017 17:45:04 GMT-0700 (PDT)
-// @last-modified Sun Mar 25 2018 23:20:45 GMT-0700 (PDT)
+// @last-modified Mon Mar 26 2018 21:00:11 GMT-0700 (PDT)
 //
 
 package main
@@ -118,11 +118,11 @@ func getLiveCreators(w http.ResponseWriter, r *http.Request) {
 		searchString = " " // space matches with all games in Twitch
 	}
 	pageNbr, err := strconv.Atoi(params.Get("pgNbr")) // the current page nbr, offset = pfNbr - 1
-	if err != nil {
+	if err != nil || pageNbr < 1 {
 		log.Println("Unable to parse the desired page nbr!")
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte(`{"error": "Unable to parse the desired page nbr!"}`))
+		w.Write([]byte(`{"error": "Unable to parse the desired page nbr! Please check the page number entered."}`))
 		return
 	}
 
