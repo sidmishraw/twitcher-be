@@ -9,6 +9,7 @@ This is the RESTful backend of `Twitcher`.
 ## Building instructions for Docker
 
 This project is docker ready.
+Available on docker cloud as [sidmishraw/twitcher-be](https://cloud.docker.com/swarm/sidmishraw/repository/docker/sidmishraw/twitcher-be/general).
 
 > Note: Tested on Docker 17.12.0-ce-mac55 (23011)
 
@@ -29,6 +30,20 @@ docker build . -f ./_ops/Dockerfile -t sidmishraw/twitcher-be:v0.0.1
 ```
 
 3 . Run the docker image for twitcher.
+
+```shell
+docker run -it --rm -p 8080:8080 sidmishraw/twitcher-be:v0.0.1
+```
+
+## Pull image from docker cloud
+
+1 . Pull the image from docker cloud
+
+```shell
+docker pull sidmishraw/twitcher-be:v0.0.1
+```
+
+2 . Run the docker image for twitcher.
 
 ```shell
 docker run -it --rm -p 8080:8080 sidmishraw/twitcher-be:v0.0.1
